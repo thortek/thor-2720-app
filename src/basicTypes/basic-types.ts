@@ -1,0 +1,1 @@
+console.log('Hello World! I am a basic type script file');
