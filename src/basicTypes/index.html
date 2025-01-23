@@ -1,49 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="nord">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../index.css" />
     <script src="basic-types.ts" defer type="module"></script>
     <title>Basic TypeScript Types</title>
-</head>
-<body class="h-screen">
-
+  </head>
+  <body class="h-screen">
     <header class="bg-blue-200">
-        <h1 class="text-4xl">Basic TypeScript Types</h1>
-        </header>
+      <h1 class="text-4xl">Basic TypeScript Types</h1>
+    </header>
 
     <main class="flex bg-blue-100 h-full">
-        <nav class="bg-green-300 max-w-40 h-full">
-            <ul>
-                <li>
-                    <button class="w-32 border-2 rounded-lg hover:bg-slate-200">Basic Types</button>
-                </li>
-                <li>
-                    <button class="w-32">Array Types</button>
-                </li>
-                <li>
-                    <button class="w-32">Special Types</button>
-                </li>
-            </ul>
-        </nav>
-        <div class="bg-red-300 w-full">
-            <h3>Card Title</h3>
-            <p>Concept Explanation</p>
-            <div>
-                <h4>Code Example</h4>
-                <pre>
+      <nav class="bg-green-300 w-48 text-center h-full">
+        <ul class="m-2 space-y-2">
+          <li>
+            <button class="btn btn-primary">Basic Types</button>
+          </li>
+          <li>
+            <button class="btn btn-primary">Array Types</button>
+          </li>
+          <li>
+            <button class="btn btn-primary">Special Types</button>
+          </li>
+        </ul>
+      </nav>
+      <div class="card bg-base-100 w-96 shadow-xl h-96">
+        <div class="card-body">
+          <h2 class="card-title">Code Example</h2>
+          <div class="mockup-code">
+            <pre>
                     <code>
-const myName: string = 'John Doe';
+const myName: string = 'John Doe'
 const myAge: number = 25;
 const hasHobbies: boolean = true;
                     </code>
                 </pre>
-            </div>
+          </div>
         </div>
+      </div>
     </main>
     <footer class="mt-auto">
-        <p>&copy; 2025</p>
+      <p>&copy; 2025</p>
     </footer>
-</body>
+  </body>
 </html>
