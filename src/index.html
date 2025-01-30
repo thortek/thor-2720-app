@@ -9,15 +9,13 @@
   </head>
   <body>
     <main class="flex flex-col bg-[url('/images/pexels-daniel-absi.jpg')] bg-cover h-screen w-screen">
-      <header>
-        <h1>Welcome to my TypeScript project!</h1>
-      </header>
-      <div class="hero bg-base-200 min-h-screen">
+
+      <div class="hero bg-base-200 min-h-screen bg-opacity-45">
         <div class="hero-content flex-col lg:flex-row">
         <img class="max-w-sm rounded-lg shadow-2xl" src="images/img-sunnyMountainBckgrnd.png" alt="Thor with hammer and lightning" />
-        <div>
+        <div class="space-y-4">
           <h2 class="text-4xl font-bold">What is TypeScript?</h2>
-          <p class="py-6">
+          <p class="py-6 font-bold bg-slate-500 bg-opacity-50 rounded-lg">
             TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It offers advanced autocompletion, navigation, and refactoring features, and is used by some of the largest companies in the world.
           </p>
           <button class="btn btn-primary">Get Started!</button>
@@ -25,7 +23,7 @@
       </div>
       </div>
       
-      <footer class="mt-auto mb-4 text-center text-white">
+      <footer class="fixed w-full bottom-4 mb-4 text-center text-white">
         <p>
           Made with <span>❤️</span> by <a href="https://github.com/thortek">Thor &copy; 2025</a>
         </p>
