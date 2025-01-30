@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../styles/vs2015.css" />
     <script src="index.ts" defer type="module"></script>
     <title>Basic TypeScript Types</title>
   </head>
@@ -16,22 +17,22 @@
       <nav class="bg-green-300 w-48 text-center h-full">
         <ul class="m-2 space-y-2">
           <li>
-            <button class="btn btn-primary">Basic Types</button>
+            <button type="button" id="basicTypesButton" class="btn btn-primary">Basic Types</button>
           </li>
           <li>
-            <button class="btn btn-primary">Array Types</button>
+            <button type="button" id="arrayTypesButton" class="btn btn-primary">Array Types</button>
           </li>
           <li>
-            <button class="btn btn-primary">Special Types</button>
+            <button type="button" id="specialTypesButton" class="btn btn-primary">Special Types</button>
           </li>
         </ul>
       </nav>
-      <div class="card bg-base-100 shadow-xl">
+      <div class="m-4 card bg-base-100">
         <div class="card-body flex-grow-0">
           <h2 class="card-title">Code Example</h2>
           <p class="cardExplanation"></p>
-          <div class="mockup-code">
-            <pre>
+          <div >
+            <pre class="bg-slate-900 text-slate-200 px-4 rounded-md">
                     <code id="cardCode">
 const myName: string = 'John Doe'
 const myAge: number = 25;

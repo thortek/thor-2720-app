@@ -33,6 +33,22 @@ let upperName: string = fullName.toUpperCase(); // String method
 `}
 }
 
+export function arrayTypesExample() {
+    return {
+        title: "Array Types in TypeScript",
+        explanation: "This section covers array types in TypeScript.  Here you see examples of number and string arrays.",
+        code: `// Example of array type`
+    }
+}
+
+export function specialTypesExample() {
+    return {
+        title: "Special Types in TypeScript",
+        explanation: "This section covers special types in TypeScript.",
+        code: `// Example of special types`
+    }
+}
+
 /* Basic types in TypeScript 
  - number
     - string
