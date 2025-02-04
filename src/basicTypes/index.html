@@ -8,43 +8,59 @@
     <script src="index.ts" defer type="module"></script>
     <title>Basic TypeScript Types</title>
   </head>
-  <body class="h-screen">
-    <header class="bg-blue-200">
-      <h1 class="text-4xl">Basic TypeScript Types</h1>
-    </header>
-
-    <main class="flex bg-blue-100 h-full">
-      <nav class="bg-green-300 w-48 text-center h-full">
-        <ul class="m-2 space-y-2">
-          <li>
-            <button type="button" id="basicTypesButton" class="btn btn-primary">Basic Types</button>
-          </li>
-          <li>
-            <button type="button" id="arrayTypesButton" class="btn btn-primary">Array Types</button>
-          </li>
-          <li>
-            <button type="button" id="specialTypesButton" class="btn btn-primary">Special Types</button>
-          </li>
-        </ul>
-      </nav>
-      <div class="m-4 card bg-base-100">
-        <div class="card-body flex-grow-0">
-          <h2 class="card-title">Code Example</h2>
-          <p class="cardExplanation"></p>
-          <div >
-            <pre class="bg-slate-900 text-slate-200 px-4 rounded-md">
-                    <code id="cardCode">
-const myName: string = 'John Doe'
-const myAge: number = 25;
-const hasHobbies: boolean = true;
-                    </code>
-                </pre>
+  <body>
+    <main class="flex flex-col bg-blue-100 h-screen">
+      <header class="bg-blue-200">
+        <h1 class="text-4xl">Basic TypeScript Types</h1>
+      </header>
+      <div class="flex h-full">
+        <nav class="bg-green-300 min-w-36 text-center">
+          <ul class="m-2 mt-6 space-y-8">
+            <li>
+              <button
+                type="button"
+                id="basicTypesButton"
+                class="btn btn-primary">
+                Basic Types
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                id="arrayTypesButton"
+                class="btn btn-primary">
+                Array Types
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                id="specialTypesButton"
+                class="btn btn-primary">
+                Special Types
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="m-4 card bg-base-100">
+          <div class="card-body flex-grow-0">
+            <h2 class="card-title">Code Example</h2>
+            <p class="cardExplanation"></p>
+            <div>
+              <pre class="bg-slate-900 text-slate-200 px-4 rounded-md">
+            <code id="cardCode">
+            const myName: string = 'John Doe'
+            const myAge: number = 25;
+            const hasHobbies: boolean = true;
+            </code>
+            </pre>
+            </div>
           </div>
         </div>
       </div>
+      <footer class="text-center">
+        <p class="p-2 font-bold">&copy; 2025 Thor Anderson Designs</p>
+      </footer>
     </main>
-    <footer class="mt-auto">
-      <p>&copy; 2025</p>
-    </footer>
   </body>
 </html>
