@@ -13,7 +13,7 @@
       <header class="bg-blue-200">
         <h1 class="text-4xl">Basic TypeScript Types</h1>
       </header>
-      <div class="flex h-full">
+      <div class="flex grow">
         <nav class="bg-green-300 min-w-36 text-center">
           <ul class="m-2 mt-6 space-y-8">
             <li>
@@ -42,20 +42,7 @@
             </li>
           </ul>
         </nav>
-        <div class="m-4 card bg-base-100">
-          <div class="card-body flex-grow-0">
-            <h2 class="card-title">Code Example</h2>
-            <p class="cardExplanation"></p>
-            <div>
-              <pre class="bg-slate-900 text-slate-200 px-4 rounded-md">
-            <code id="cardCode">
-            const myName: string = 'John Doe'
-            const myAge: number = 25;
-            const hasHobbies: boolean = true;
-            </code>
-            </pre>
-            </div>
-          </div>
+        <div id="examplesContainer" class="w-full h-full card bg-base-100 overflow-auto">
         </div>
       </div>
       <footer class="text-center">
