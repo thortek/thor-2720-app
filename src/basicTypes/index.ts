@@ -37,7 +37,7 @@ if (specialTypesButton) {
 }
 
 // Have loadExample function load the imported example functions
-function loadExample(exampleType: string) {
+/* function loadExample(exampleType: string) {
   console.log(`Loading example content for ${exampleType} types`)
   let chosenExampleType
   switch (exampleType) {
@@ -60,7 +60,7 @@ function loadExample(exampleType: string) {
       language: "typescript",
     }).value
   }
-}
+} */
 
 // Be able to load many examples passed in as an array
 function loadExamples(examples: any[]) {
