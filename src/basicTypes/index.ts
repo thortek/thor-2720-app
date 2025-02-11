@@ -25,15 +25,22 @@ const cardCode = document.querySelector("#cardCode")
 
 // Add event listeners to the buttons
 if (basicTypesButton) {
-    const examples = [basicTypesNumber(), basicTypesString(), basicTypesBoolean(), basicTypesObject()]
-    basicTypesButton.addEventListener("click", () => loadExamples(examples))
+  const examples = [
+    basicTypesNumber(),
+    basicTypesString(),
+    basicTypesBoolean(),
+    basicTypesObject(),
+  ]
+  basicTypesButton.addEventListener("click", () => loadExamples(examples))
 }
 if (arrayTypesButton) {
-    const examples = [arrayTypes(), arrayTypesTuple()]
+  const examples = [arrayTypes(), arrayTypesTuple()]
   arrayTypesButton.addEventListener("click", () => loadExamples(examples))
 }
 if (specialTypesButton) {
-  specialTypesButton.addEventListener("click", () => loadExamples([specialTypesExample()]))
+  specialTypesButton.addEventListener("click", () =>
+    loadExamples([specialTypesExample()])
+  )
 }
 
 // Have loadExample function load the imported example functions
@@ -71,7 +78,9 @@ function loadExamples(examples: any[]) {
     return
   }
 
-  container.innerHTML = examples.map((example) => `
+  container.innerHTML = examples
+    .map(
+      (example) => `
     <div class="card-body flex-grow-0">
 <h2 class="card-title">${example.title}</h2>
 <p>${example.explanation}</p>
