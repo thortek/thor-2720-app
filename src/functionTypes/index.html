@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../styles/vs2015.css" />
+    <script src="index.ts" defer type="module"></script>
+    <title>TypeScript Function Types</title>
+</head>
+<body>
+  <main class="flex flex-col bg-blue-100 h-screen justify-center items-center">
+    <h1 class="text-4xl m-4 rounded-lg bg-primary-content p-4 ">TypeScript Function Types</h1>
+    <div class="carousel mx-4">
+        <div id="slide1" class="carousel-item relative w-full">
+          <div id="examplesContainer" class="w-full h-full card bg-base-100 overflow-auto">
+            <div class="card-body flex-grow-0">
+              <h2 class="card-title">Example title goes here</h2>
+              <p>Example explanation</p>
+              <div>
+              <pre class="bg-slate-900 text-slate-200 px-4 rounded-md">
+              <code class="text-wrap">
+                function greetUser(name: string, age?: number): string {
+                if (age) {
+                    return "Hello " + name + ", you are " + age + " years old."
+                } else {
+                    return "Hello " + name
+                }
+            }
+              </code>
+              </pre>
+              </div>
+              </div>
+          </div>
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a id="leftNavButton" href="#" class="btn btn-circle">❮</a>
+            <a id="rightNavButton" href="#" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+<!--         <div id="slide2" class="carousel-item relative w-full">
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
+            class="w-full" />
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide1" class="btn btn-circle">❮</a>
+            <a href="#slide3" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide3" class="carousel-item relative w-full">
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
+            class="w-full" />
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide2" class="btn btn-circle">❮</a>
+            <a href="#slide4" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide4" class="carousel-item relative w-full">
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
+            class="w-full" />
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide3" class="btn btn-circle">❮</a>
+            <a href="#slide1" class="btn btn-circle">❯</a>
+          </div>
+        </div> -->
+      </div>
+  </main>
+</body>
+</html>
