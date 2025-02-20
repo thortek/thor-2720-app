@@ -3,9 +3,14 @@ import {
   functionReturnTypesOne,
   functionReturnTypesTwo,
 } from '../examples/functionTypes/examples'
-import { loadExamples } from '../utils/exampleLoadFuncs'
+import { loadExamples, loadExample } from '../utils/exampleLoadFuncs'
+import type { CodeExample } from '../types/CodeExample'
 
-const examples = [functionParams(), functionReturnTypesOne(), functionReturnTypesTwo()]
+const examples: CodeExample[] = [
+  functionParams(),
+  functionReturnTypesOne(),
+  functionReturnTypesTwo(),
+]
 
 let exampleCounter = 0
 
@@ -13,22 +18,43 @@ const leftNavButton = document.querySelector('#leftNavButton')
 const rightNavButton = document.querySelector('#rightNavButton')
 
 if (leftNavButton) {
+  if (exampleCounter === 0) {
+    leftNavButton.classList.toggle('hidden')
+  }
+
   // figure out if the example counter is greater than 0
   leftNavButton.addEventListener('click', () => {
     if (exampleCounter > 0) {
       exampleCounter--
-    } 
-    console.log('exampleCounter value is: ', exampleCounter)
-    loadExamples([examples[exampleCounter]])
-})
+    } // else if exampleCounter is equal to 0, hide the leftNavButton
+    // if (exampleCounter === 0) {
+    //   leftNavButton.classList.add('hidden')
+    // }
+    console.log(
+      'Left Nav exampleCounter value is decremented to: ',
+      exampleCounter
+    )
+    loadExample(examples[exampleCounter])
+  })
 }
 
 if (rightNavButton) {
-  const examples = [functionReturnTypesOne()]
-  rightNavButton.addEventListener('click', () => loadExamples(examples))
+  if (exampleCounter === examples.length - 1) {
+    rightNavButton.classList.add('hidden')
+  } 
+
+  rightNavButton.addEventListener('click', () => {
+    if (exampleCounter < examples.length - 1) {
+      exampleCounter++
+    } // else if exampleCounter is equal to the length of the examples array - 1, hide the rightNavButton
+
+    loadExample(examples[exampleCounter])
+  })
 }
 
-function getName(): string {
+loadExample(examples[exampleCounter])
+
+/* function getName(): string {
   return 'John Doe'
 }
 
@@ -44,4 +70,4 @@ function logMessage(msg: string): void {
   console.log(msg)
 }
 
-const logMessageArrow = (msg: string): void => console.log(msg)
+const logMessageArrow = (msg: string): void => console.log(msg) */
