@@ -17,57 +17,48 @@ let exampleCounter = 0
 const leftNavButton = document.querySelector('#leftNavButton')
 const rightNavButton = document.querySelector('#rightNavButton')
 
-if (leftNavButton) {
-  if (exampleCounter === 0) {
-    leftNavButton.classList.toggle('hidden')
+const updateNavButtons = () => {
+  if (leftNavButton && rightNavButton) {
+    leftNavButton.classList.toggle('hidden', exampleCounter === 0)
   }
+  rightNavButton?.classList.toggle('hidden', exampleCounter === examples.length - 1)
+}
 
-  // figure out if the example counter is greater than 0
+if (leftNavButton) {
   leftNavButton.addEventListener('click', () => {
     if (exampleCounter > 0) {
       exampleCounter--
-    } // else if exampleCounter is equal to 0, hide the leftNavButton
-    // if (exampleCounter === 0) {
-    //   leftNavButton.classList.add('hidden')
-    // }
-    console.log(
-      'Left Nav exampleCounter value is decremented to: ',
-      exampleCounter
-    )
-    loadExample(examples[exampleCounter])
+      loadExample(examples[exampleCounter])
+      updateNavButtons()
+      updateDotIndicators()
+    } 
   })
 }
 
 if (rightNavButton) {
-  if (exampleCounter === examples.length - 1) {
-    rightNavButton.classList.add('hidden')
-  } 
-
   rightNavButton.addEventListener('click', () => {
     if (exampleCounter < examples.length - 1) {
       exampleCounter++
-    } // else if exampleCounter is equal to the length of the examples array - 1, hide the rightNavButton
-
-    loadExample(examples[exampleCounter])
+      loadExample(examples[exampleCounter])
+      updateNavButtons()
+      updateDotIndicators()
+    } 
   })
 }
 
+const updateDotIndicators = () => {
+  const dots = document.querySelectorAll('.rounded-full')
+  dots.forEach((dot, index) => {
+    if (index === exampleCounter) {
+      dot.classList.remove('bg-gray-300')
+      dot.classList.add('bg-primary')
+    } else {
+      dot.classList.remove('bg-primary')
+      dot.classList.add('bg-gray-300')
+    }
+  })
+}
+
+updateNavButtons()
+updateDotIndicators()
 loadExample(examples[exampleCounter])
-
-/* function getName(): string {
-  return 'John Doe'
-}
-
-const getNameArrow = (): string => 'John Doe'
-
-function calculateArea(radius: number): number {
-  return Math.PI * radius * radius
-}
-
-const calculateAreaArrow = (radius: number): number => Math.PI * radius * radius
-
-function logMessage(msg: string): void {
-  console.log(msg)
-}
-
-const logMessageArrow = (msg: string): void => console.log(msg) */
