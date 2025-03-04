@@ -1,3 +1,56 @@
+import curriculum from '../data/curriculum.json'
+
+const blocks = curriculum["responsive-web-design"].blocks
+
+const blocksObj= Object.values(blocks)
+
+// this is an example of destructuring an object into an array
+const [basicCSS, basicHTML, flexbox, grid] = blocksObj
+
+// example of destructuring an object into its keys
+const { meta, challenges } = basicCSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Bird {
   wingSpan: number = 0
   fly() {
