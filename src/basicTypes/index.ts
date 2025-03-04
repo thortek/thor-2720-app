@@ -81,7 +81,7 @@ function loadExamples(examples: any[]) {
   container.innerHTML = examples
     .map(
       (example) => `
-    <div class="card-body flex-grow-0">
+    <div class="card-body grow-0">
 <h2 class="card-title">${example.title}</h2>
 <p>${example.explanation}</p>
 <div>
@@ -101,7 +101,7 @@ function loadExamples(examples: any[]) {
 }
 
 /* 
-<div class="card-body flex-grow-0">
+<div class="card-body grow-0">
 <h2 class="card-title">Code Example</h2>
 <p class="cardExplanation"></p>
 <div>
