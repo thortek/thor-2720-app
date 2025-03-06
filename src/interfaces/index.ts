@@ -10,6 +10,41 @@ const [basicCSS, basicHTML, flexbox, grid] = blocksObj
 // example of destructuring an object into its keys
 const { meta, challenges } = basicCSS
 
+const navBarCenter = document.querySelector(".navbar #navBarCenter")
+const navList = document.querySelector("#navList")
+
+const buildTopNavFromJSON = (blocksArray: any) => {
+  blocksArray.forEach((block: any) => {
+    //console.log(block.meta.name)
+    const navItem = document.createElement("a")
+    navItem.classList.add("btn")
+    navItem.href = `#${block.meta.name}`
+    navItem.textContent = block.meta.name
+
+    navItem.addEventListener("click", (event: any) => {
+      // find the block that matches the navItem that was clicked
+      //console.log(event.target.textContent)
+      const blockToDisplay = blocksArray.find((block: any) => block.meta.name === event.target.textContent)
+      //console.log(blockToDisplay)
+      buildLeftNavFromJSON(blockToDisplay)
+    })
+
+    navBarCenter?.appendChild(navItem)
+  })
+}
+
+const buildLeftNavFromJSON = (block: any) => {
+  //console.log(block.challenges)
+  block.challenges.forEach((challenge: any) => {
+    const listItem = document.createElement("li")
+    console.log(challenge.title)
+    listItem.textContent = challenge.title
+    listItem.classList.add("btn", "btn-ghost", "list-row")
+    navList?.appendChild(listItem)
+  })
+}
+
+buildTopNavFromJSON(blocksObj)
 
 
 
