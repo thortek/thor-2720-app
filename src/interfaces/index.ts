@@ -38,8 +38,12 @@ const buildLeftNavFromJSON = (block: any) => {
   block.challenges.forEach((challenge: any) => {
     const listItem = document.createElement("li")
     console.log(challenge.title)
-    listItem.textContent = challenge.title
-    listItem.classList.add("btn", "btn-ghost", "list-row")
+    //listItem.textContent = challenge.title
+    listItem.classList.add("list-row")
+    const listDiv = document.createElement("div")
+    listDiv.classList.add("btn", "btn-ghost")
+    listDiv.textContent = challenge.title
+    listItem.appendChild(listDiv)
     navList?.appendChild(listItem)
   })
 }
