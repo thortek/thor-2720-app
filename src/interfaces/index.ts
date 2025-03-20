@@ -74,7 +74,7 @@ const buildSnippetDisplay = (challenge: CodeSnippet) => {
 
   const instructions = document.createElement('div')
   instructions.innerHTML = challenge.instructions as string
-  instructions.classList.add('bg-blue-900')
+  instructions.classList.add('bg-base-300')
   
   snippetDisplay?.appendChild(title)
   snippetDisplay?.appendChild(description)
