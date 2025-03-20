@@ -1,4 +1,5 @@
 import curriculum from '../data/curriculum.json'
+import { CodeSnippet } from '../types/CodeSnippet'
 
 const blocks = curriculum["responsive-web-design"].blocks
 
@@ -12,6 +13,7 @@ const { meta, challenges } = basicCSS
 
 const navBarCenter = document.querySelector(".navbar #navBarCenter")
 const navList = document.querySelector("#navList")
+const snippetDisplay = document.querySelector("#snippetDisplay")
 
 const buildTopNavFromJSON = (blocksArray: any) => {
   blocksArray.forEach((block: any) => {
@@ -34,7 +36,11 @@ const buildTopNavFromJSON = (blocksArray: any) => {
 }
 
 const buildLeftNavFromJSON = (block: any) => {
-  //console.log(block.challenges)
+  // empty the left nav before adding new items
+  while (navList?.firstChild) {
+    navList.removeChild(navList.firstChild)
+  }
+  
   block.challenges.forEach((challenge: any) => {
     const listItem = document.createElement("li")
     console.log(challenge.title)
@@ -43,9 +49,36 @@ const buildLeftNavFromJSON = (block: any) => {
     const listDiv = document.createElement("div")
     listDiv.classList.add("btn", "btn-ghost")
     listDiv.textContent = challenge.title
+
+    listDiv.addEventListener("click", (event: any) => {
+      buildSnippetDisplay(challenge)
+    })
+
     listItem.appendChild(listDiv)
     navList?.appendChild(listItem)
   })
+}
+
+const buildSnippetDisplay = (challenge: CodeSnippet) => {
+  // make some DOM elements to display the challenge
+  while (snippetDisplay?.firstChild) {
+    snippetDisplay.removeChild(snippetDisplay.firstChild)
+  }
+
+  const title = document.createElement('h2')
+  title.textContent = challenge.title
+  title.classList.add('text-2xl', 'font-bold', 'text-center')
+
+  const description = document.createElement('div')
+  description.innerHTML = challenge.description as string
+
+  const instructions = document.createElement('div')
+  instructions.innerHTML = challenge.instructions as string
+  instructions.classList.add('bg-blue-900')
+  
+  snippetDisplay?.appendChild(title)
+  snippetDisplay?.appendChild(description)
+  snippetDisplay?.appendChild(instructions)
 }
 
 buildTopNavFromJSON(blocksObj)
