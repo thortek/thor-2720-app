@@ -50,7 +50,7 @@ const buildLeftNavFromJSON = (block: any) => {
     listDiv.classList.add("btn", "btn-ghost")
     listDiv.textContent = challenge.title
 
-    listDiv.addEventListener("click", (event: any) => {
+    listDiv.addEventListener("click", () => {
       buildSnippetDisplay(challenge)
     })
 
