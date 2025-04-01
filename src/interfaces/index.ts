@@ -53,7 +53,7 @@ const buildLeftNavFromJSON = (block: any) => {
     listDiv.classList.add("btn", "btn-ghost", "h-24", "p-1", "w-full");
     listDiv.textContent = challenge.title;
 
-    listDiv.addEventListener("click", (event) => {
+    listDiv.addEventListener("click", () => {
       // Remove active class from all other items
       document.querySelectorAll('#navList li div').forEach(item => {
         item.classList.remove('active', 'bg-primary/10', 'border-r-4', 'border-primary');
@@ -66,7 +66,7 @@ const buildLeftNavFromJSON = (block: any) => {
       buildSnippetDisplay(challenge);
       
       // Align the snippet with the clicked nav item
-      alignSnippetWithNavItem(event.target as HTMLElement);
+      alignSnippetWithNavItem();
     });
 
     listItem.appendChild(listDiv);
@@ -75,15 +75,13 @@ const buildLeftNavFromJSON = (block: any) => {
 }
 
 // Function to align snippet with clicked nav item
-const alignSnippetWithNavItem = (clickedItem: HTMLElement) => {
-  if (!snippetDisplay) return;
-  
-  // Use scrollTo with smooth behavior instead of directly setting scrollTop
-  snippetDisplay.scrollTo({
+const alignSnippetWithNavItem = () => {
+  document.documentElement.scrollTo({
     top: 0,
     behavior: 'smooth'
-  });
+  }); // For Chrome, Firefox, IE, Opera
 
+  document.body.scrollTop = 0; // For Safari
 };
 
 const buildSnippetDisplay = (challenge: CodeSnippet) => {
