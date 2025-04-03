@@ -1,8 +1,53 @@
+import { ExampleCodeSnippet } from "../lib/classes/ExampleCodeSnippet";
 
+const section1 = document.querySelector("#section1")
+const section2 = document.querySelector("#section2")
+const section3 = document.querySelector("#section3")
 
+const example1 = document.querySelector("#example1")
+const example2 = document.querySelector("#example2")
+const example3 = document.querySelector("#example3")
 
+const observerOptions = {
+  root: null,
+  threshold: 0.25,
+  rootMargin: '-50px'
+}
 
+const sectionObserver = new IntersectionObserver(callBackFunction, observerOptions)
 
+if (section1) sectionObserver.observe(section1)
+if (section2) sectionObserver.observe(section2)
+if (section3) sectionObserver.observe(section3)
+
+  function callBackFunction(entries: IntersectionObserverEntry[]) {
+  entries.forEach((entry) => {
+    const div = entry.target.querySelector('div')
+    const targetClass = (entry.target as HTMLElement).dataset.class
+    console.log('Target class:', targetClass)
+
+    if (entry.isIntersecting) {
+      console.log('Intersecting:' )
+      div?.classList.remove(targetClass ?? '', "opacity-0")
+    } else {
+      console.log('Not intersecting:')
+      div?.classList.add(targetClass ?? '', "opacity-0")
+    }
+  })
+}
+
+const classExample = new ExampleCodeSnippet(`Class Example`, `A class is a blueprint for creating objects...`,
+  `class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }`
+)
+
+if (example1) example1.innerHTML = classExample.renderCodeSnippet()
 
 
 
