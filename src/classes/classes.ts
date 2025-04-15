@@ -7,6 +7,7 @@ const section3 = document.querySelector('#section3')
 const example1 = document.querySelector('#example1')
 const example2 = document.querySelector('#example2')
 const example3 = document.querySelector('#example3')
+// add examples 4 Encapsulation and 5 Polymorphism
 
 const observerOptions = {
   root: null,
@@ -27,7 +28,7 @@ function callBackFunction(entries: IntersectionObserverEntry[]) {
   entries.forEach((entry) => {
     const div = entry.target.querySelector('div')
     const targetClass = (entry.target as HTMLElement).dataset.class
-    console.log('Target class:', targetClass)
+    //console.log('Target class:', targetClass)
 
     if (entry.isIntersecting) {
       div?.classList.remove(targetClass ?? '', 'opacity-0')
@@ -40,7 +41,8 @@ function callBackFunction(entries: IntersectionObserverEntry[]) {
 const classExample = new ExampleCodeSnippet(
   'Class Example',
   `A class is a blueprint for creating objects (a particular data structure), providing initial values for state (member variables or properties), and implementations of behavior (member functions or methods).`,
-  `class Person {
+`
+class Person {
   name: string;
   age: number;
 
@@ -61,21 +63,46 @@ if (example1) example1.innerHTML = classExample.renderCodeSnippet()
     'Abstract Class Example',
     `Abstract classes are base classes from which other classes may be derived. They may not be instantiated directly. Unlike an interface, an abstract class may contain implementation details for its members.`,
     `
-    abstract class Shape {
+abstract class Shape {
+  protected color: string;
 
-        protected color: string;
+  abstract getArea(): number;
 
-        abstract getArea(): number;
+  abstract getPerimeter(): number;
 
-        abstract getPerimeter(): number;
-
-        getColor(): string {
-            return this.color;
-        }
-    }`
+  getColor(): string {
+    return this.color;
+  }
+}
+`
 )
 
 if (example2) example2.innerHTML = abstractClassExample.renderCodeSnippet()
+
+const inheritanceExample = new ExampleCodeSnippet(
+  'Inheritance Example',
+  `Inheritance is a mechanism in which one class acquires the property of another class. It provides a way to create a new class from an existing class.`,
+  `
+class Circle extends Shape {
+  private radius: number // private means this property is only accessible within this class
+
+  constructor(radius: number, color: string) {
+    super() // Call the constructor of the parent class
+    this.radius = radius
+    this.color = color
+  }
+
+  getArea(): number {
+    return Math.PI * Math.pow(this.radius, 2)
+  }
+
+  getPerimeter(): number {
+    return 2 * Math.PI * this.radius
+  }
+}`
+)
+
+if (example3) example3.innerHTML = inheritanceExample.renderCodeSnippet()
 
 
 
@@ -175,6 +202,28 @@ class Person {
 const alice = new Person('Alice', 30, 'Engineer')
 alice.greet()
 alice.setName('Alice Smith')
-alice.greet()
+console.log(alice.getName())
 const bob = new Person('Bob', 25, 'Designer')
 bob.greet()
+
+
+abstract class Vehicle {
+  constructor(public brand: string) {}
+  
+  displayBrand() {
+    console.log(`Brand: ${this.brand}`);
+  }
+}
+
+class Car extends Vehicle {
+  constructor(public brand: string, public model: string) {
+    super(brand);
+  }
+  
+  displayModel() {
+    console.log(`Model: ${this.model}`);
+  }
+}
+const myCar = new Car("Toyota", "Corolla");
+myCar.displayBrand(); // Output: Brand: Toyota
+
