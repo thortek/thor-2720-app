@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="nord">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../styles/vs2015.css" />
+    <script src="generics.ts"></script>
+    <title>Generics</title>
+</head>
+<body>
+    <h1>Generics</h1>
+    <p>Generics are a powerful feature in TypeScript that allow you to create reusable components and functions that can work with any data type.</p>
+    <p>They enable you to write code that is flexible and type-safe, allowing you to define a function or class that can operate on different types without losing the benefits of type checking.</p>
+    <h2>Example of Generics</h2>
+    <p>Here is a simple example of a generic function that takes an array of any type and returns the first element:</p>
+    <pre><code>
+function getFirstElement<T>(arr: T[]): T {
+    return arr[0];
+}
+const numbers = [1, 2, 3];
+const firstNumber = getFirstElement(numbers); // firstNumber is of type number
+const strings = ['a', 'b', 'c'];
+const firstString = getFirstElement(strings); // firstString is of type string
+    </code></pre>
+    <p>In this example, the function <code>getFirstElement</code> is defined with a generic type parameter <code>T</code>. This allows the function to accept an array of any type and return the first element of that type.</p>
+    <h2>Using Generics with Interfaces</h2>
+    <p>You can also use generics with interfaces to create flexible data structures. Here is an example:</p>
+    <pre><code>
+interface Pair<T, U> {
+    first: T;
+    second: U;
+}
+const numberStringPair: Pair<number, string> = {
+    first: 1,
+    second: 'one'
+};
+const stringBooleanPair: Pair<string, boolean> = {
+    first: 'true',
+    second: true
+};
+    </code></pre>
+
+</body>
+</html>
